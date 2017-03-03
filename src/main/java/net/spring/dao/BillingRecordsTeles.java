@@ -1,8 +1,6 @@
 package net.spring.dao;
 
 public interface BillingRecordsTeles {
-    
-    public String proba();
 
     public String ostvareniTelefonskiSaobracajOdFiksneKaFiksnimMrezama();
 

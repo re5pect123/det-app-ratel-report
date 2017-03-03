@@ -3,13 +3,11 @@ package querySrbija;
 public class QueryBillingRecordsTeles {
 
     //***** SAOBRACAJ ******
-    public static String proba = "SELECT sum(duration) FROM billing_record.billing_records_teles_2016_01;";
-
     //1
     public static String ostvareniTelefonskiSaobracajOdFiksneKaFiksnimMrezama
             = "select sum(duration)/60 from(\n"
             + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_01\n"
-            /*     + "union all\n"
+            + "union all\n"
             + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_02\n"
             + "union all\n"
             + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_03\n"
@@ -30,7 +28,7 @@ public class QueryBillingRecordsTeles {
             + "union all\n"
             + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_11\n"
             + "union all\n"
-            + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_12\n" */
+            + "select duration, destination, dnis, peerid, direction, ani from billing_records_teles_2016_12\n"
             + ") as foo\n"
             + "where destination \n"
             + "not like '%mob%'\n"
@@ -44,7 +42,7 @@ public class QueryBillingRecordsTeles {
     public static String ostvareniTelefonskiSaobracaj_Od_Fiksne_Ka_Drugim_Domacim_Fiksnim_Mrezama_Telekom_Srbija
             = "select sum(duration)/60 from(\n"
             + "select duration, destination, category, direction, peerid from billing_records_teles_2016_01\n"
-            /*    + "union all\n"
+            + "union all\n"
             + "select duration, destination, category, direction, peerid from billing_records_teles_2016_02\n"
             + "union all\n"
             + "select duration, destination, category, direction, peerid from billing_records_teles_2016_03\n"
@@ -65,7 +63,7 @@ public class QueryBillingRecordsTeles {
             + "union all\n"
             + "select duration, destination, category, direction, peerid from billing_records_teles_2016_11\n"
             + "union all\n"
-            + "select duration, destination, category, direction, peerid from billing_records_teles_2016_12\n" */
+            + "select duration, destination, category, direction, peerid from billing_records_teles_2016_12\n"
             + ") as foo\n"
             + "where peerID ='2' and direction = 'E' and category = 'fiksna TS';";
 
@@ -152,7 +150,6 @@ public class QueryBillingRecordsTeles {
             + "SELECT duration, destination from billing_records_teles_2016_11\n"
             + "union all\n"
             + "SELECT duration, destination from billing_records_teles_2016_12\n"
-            + "\n"
             + ") as foo where destination like '%mob%';";
 
     //3.1
