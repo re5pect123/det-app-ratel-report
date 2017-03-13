@@ -1,5 +1,7 @@
 package net.spring.config;
 
+import net.spring.dao.PPK1;
+import net.spring.dao.PPK1Impl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +28,11 @@ public class SpringConfigViewResolver extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+
+    @Bean
+    public PPK1 ppk1() {
+        return new PPK1Impl();
     }
 
 }
