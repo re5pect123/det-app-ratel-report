@@ -129,33 +129,33 @@
             </table>
 
             <button onclick="pokreniteMe1()">Try it</button>
+            <button onclick="proba()">Proba</button>
 
-            <script>
-                function pokreniteMe() {
-                    alert("Hello! I am an alert box!");
-                }
-            </script>
+
             <script>
                 function pokreniteMe1() {
-                    alert("Hello! I am an alert box!");
-
-
                     $.ajax({
-                        async: false,
-                        url: "http://localhost:8080/downloadHome_master/rest1/1",
+                        url: 'http://localhost:8080/downloadHome_master/rest1/1',
+                    });
+                }
+
+
+                $.ajax({
+                    url: "http://localhost:8080/downloadHome_master/rest/5",
+                }).done(function (response) {
+                    $("#ostvareniTelefonskiSaobracaj_Od_Fiksne_Ka_Drugim_Domacim_Fiksnim_Mrezama_ORION").html(response);
+                });
+
+                function proba() {
+                    $.ajax({
+                        url: 'http://localhost:8080/downloadHome_master/rest1/1'
                     }).done(function (response) {
                         $("#n_svih_poziva").html(response);
-                    });
-
-                    $.ajax({
-                        async: false,
-                        url: "http://localhost:8080/downloadHome_master/rest1/2",
-                    }).done(function (response) {
-                        $("#n_nacionalnih_poziva_unutar_fiksne_mreže_u_okviru_lokalne_centrale").html(response);
-                    });
-
-
+                    }
+                    )
                 }
+
+
             </script>
 
 

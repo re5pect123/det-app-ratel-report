@@ -42,13 +42,30 @@ public class MainController {
     public String rest1(@PathVariable int vrsta) {
         switch (vrsta) {
             case 1:
-                System.out.println("Pokrenuo sam rest i upit A");
-                String n_svih_poziva = ppk1.A();
+                System.out.println("Pokrenuo sam rest i upit n_svih_poziva");
+                String n_svih_poziva = String.valueOf(ppk1.n_svih_poziva());
+                System.out.println("OVO JE REZULTAT IZ KONTORLERA " + n_svih_poziva);
                 return n_svih_poziva;
-            case 2:
-                System.out.println("Pokrenuo sam rest i upit B");
-                String n_nacionalnih_poziva_unutar_fiksne_mreže_u_okviru_lokalne_centrale = ppk1.B();
+            /* case 2:
+                System.out.println("Pokrenuo sam rest i upit n_nacionalnih_poziva_unutar_fiksne_mreže_u_okviru_lokalne_centrale");
+                Double n_nacionalnih_poziva_unutar_fiksne_mreže_u_okviru_lokalne_centrale = ppk1.n_nacionalnih_poziva_unutar_fiksne_mreže_prema_drugim_fiksnim_operatorima();
                 return n_nacionalnih_poziva_unutar_fiksne_mreže_u_okviru_lokalne_centrale;
+            case 3:
+                System.out.println("Pokrenuo sam rest i upit n_nacionalnih_poziva_unutar_fiksne_mreže_van_lokalne_centrale");
+                Double n_nacionalnih_poziva_unutar_fiksne_mreže_van_lokalne_centrale = ppk1.n_nacionalnih_poziva_unutar_fiksne_mreže_van_lokalne_centrale();
+                return n_nacionalnih_poziva_unutar_fiksne_mreže_van_lokalne_centrale;
+            case 4:
+                System.out.println("Pokrenuo sam rest i upit n_nacionalnih_poziva_unutar_fiksne_mreže_prema_mobilnim_operatorima");
+                Double n_nacionalnih_poziva_unutar_fiksne_mreže_prema_mobilnim_operatorima = ppk1.n_nacionalnih_poziva_unutar_fiksne_mreže_prema_mobilnim_operatorima();
+                return n_nacionalnih_poziva_unutar_fiksne_mreže_prema_mobilnim_operatorima;
+            case 5:
+                System.out.println("Pokrenuo sam rest i upit n_nacionalnih_poziva_unutar_fiksne_mreže_prema_drugim_fiksnim_operatorima");
+                Double n_nacionalnih_poziva_unutar_fiksne_mreže_prema_drugim_fiksnim_operatorima = ppk1.n_nacionalnih_poziva_unutar_fiksne_mreže_prema_drugim_fiksnim_operatorima();
+                return n_nacionalnih_poziva_unutar_fiksne_mreže_prema_drugim_fiksnim_operatorima;
+            case 6:
+                System.out.println("Pokrenuo sam rest i upit n_medjunarodnih_poziva");
+                Double n_medjunarodnih_poziva = ppk1.n_medjunarodnih_poziva();
+                return n_medjunarodnih_poziva;*/
         }
         return "";
     }
